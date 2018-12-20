@@ -157,6 +157,7 @@ def gen_poetry():
         word = to_word(probs_)
         #word = words[np.argmax(probs_)]
         poem = ''
+        count = 0
         while word != ']':
             poem += word
             x = np.zeros((1,1))
@@ -164,6 +165,10 @@ def gen_poetry():
             [probs_, state_] = sess.run([probs, last_state], feed_dict={input_data: x, initial_state: state_})
             word = to_word(probs_)
             #word = words[np.argmax(probs_)]
+            count += 1
+            if count == 200:
+                print('fail')
+                break
         return poem
 
 print(gen_poetry())
