@@ -178,7 +178,7 @@ def gen_head_poetry(heads, type):
                     flag = False
         return poem
 
-print(gen_head_poetry(u'骆家冀牛', 7))
+print(gen_head_poetry(u'物竞天择', 7))
 '''
 test01
 物易一在是岐路，试将司却该朱微。
